@@ -3,5 +3,8 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: Installation and Setup 
+parts:
+  - title: Introduction
+    chapters:
+      - file: Installation and Setup/Installation.md
+      - file: Installation and Setup/Getting Started.md
