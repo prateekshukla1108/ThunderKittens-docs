@@ -3,7 +3,7 @@
 ### Tile primitives for speedy kernels
 
 <div align="center" >
-    <img src="assets/logo.png" height=350 alt="ThunderKittens logo" style="margin-bottom:px"/> 
+    <img src="logo.png" height=350 alt="ThunderKittens logo" style="margin-bottom:px"/> 
 </div>
 
 <br>
