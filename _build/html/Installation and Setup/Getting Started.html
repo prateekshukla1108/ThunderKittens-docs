@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting started &#8212; ThunderKittens</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Installation and Setup/Getting Started';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="ThunderKittens - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="ThunderKittens - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ThunderKittens
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FInstallation and Setup/Getting Started.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Installation and Setup/Getting Started.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting started</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Getting started</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demos">Demos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thunderkittens-manual">ThunderKittens Manual</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidias-programming-model">NVIDIA’s Programming Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typing">Typing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scopes">Scopes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-restrictions">Other Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-and-get-involved">Learn more and get involved!</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<p><em>Example: A Simple Atention Kernel</em></p>
+<p>Here’s an example of what a simple FlashAttention-2 kernel for an RTX 4090 looks like written in ThunderKittens.</p>
+<div class="highlight-Cuda notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;kittens.cuh&quot;</span>
+
+<span class="n">using</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span><span class="n">kittens</span><span class="p">;</span>
+
+<span class="n">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NUM_WORKERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// This kernel uses 4 worker warps per block, and 2 blocks per SM.</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">constexpr</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">ROWS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="mi">128</span><span class="o">/</span><span class="n">D</span><span class="p">);</span><span class="w"> </span><span class="c1">// height of each worker tile (rows)</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">typename</span><span class="w"> </span><span class="n">T</span><span class="o">=</span><span class="n">bf16</span><span class="p">,</span><span class="w"> </span><span class="n">typename</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="n">row_l</span><span class="o">&gt;</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">qkvo_tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rt</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">typename</span><span class="w"> </span><span class="n">T</span><span class="o">=</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">attn_tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rt</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">shared_tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st_bf</span><span class="o">&lt;</span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">global_layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gl</span><span class="o">&lt;</span><span class="n">bf16</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// B, H, g.Qg.rows specified at runtime, D=64 known at compile time for this kernel</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">globals</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">global_layout</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Qg</span><span class="p">,</span><span class="w"> </span><span class="n">Kg</span><span class="p">,</span><span class="w"> </span><span class="n">Vg</span><span class="p">,</span><span class="w"> </span><span class="n">Og</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">template</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">__launch_bounds__</span><span class="p">(</span><span class="n">NUM_WORKERS</span><span class="o">*</span><span class="n">WARP_THREADS</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="kr">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">attend_ker</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">__grid_constant__</span><span class="w"> </span><span class="n">globals</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">using</span><span class="w"> </span><span class="n">load_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kittens</span><span class="o">::</span><span class="n">group</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// pairs of workers collaboratively load k, v tiles</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">loadid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_group</span><span class="o">::</span><span class="n">groupid</span><span class="p">(),</span><span class="w"> </span><span class="n">workerid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kittens</span><span class="o">::</span><span class="n">warpid</span><span class="p">();</span><span class="w"> </span><span class="c1">// which worker am I?</span>
+<span class="w">    </span><span class="n">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LOAD_BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NUM_WORKERS</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">load_group</span><span class="o">::</span><span class="n">GROUP_WARPS</span><span class="p">;</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">blockIdx</span><span class="p">.</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">q_seq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">NUM_WORKERS</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">workerid</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">extern</span><span class="w"> </span><span class="kt">__shared__</span><span class="w"> </span><span class="n">alignment_dummy</span><span class="w"> </span><span class="n">__shm</span><span class="p">[];</span><span class="w"> </span><span class="c1">// this is the CUDA shared memory</span>
+<span class="w">    </span><span class="n">shared_allocator</span><span class="w"> </span><span class="nf">al</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">__shm</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="w">    </span><span class="c1">// K and V live in shared memory. Here, we instantiate three tiles for a 3-stage pipeline.</span>
+<span class="w">    </span><span class="n">shared_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">k_smem</span><span class="p">)[</span><span class="n">LOAD_BLOCKS</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">al</span><span class="p">.</span><span class="n">allocate</span><span class="o">&lt;</span><span class="n">shared_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOAD_BLOCKS</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">shared_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">v_smem</span><span class="p">)[</span><span class="n">LOAD_BLOCKS</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">al</span><span class="p">.</span><span class="n">allocate</span><span class="o">&lt;</span><span class="n">shared_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOAD_BLOCKS</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// We also reuse this memory to improve coalescing of DRAM reads and writes.</span>
+<span class="w">    </span><span class="n">shared_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">qo_smem</span><span class="p">)[</span><span class="n">NUM_WORKERS</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reinterpret_cast</span><span class="o">&lt;</span><span class="n">shared_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="p">)[</span><span class="n">NUM_WORKERS</span><span class="p">]</span><span class="o">&gt;</span><span class="p">(</span><span class="n">k_smem</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Initialize all of the register tiles.</span>
+<span class="w">    </span><span class="n">qkvo_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">bf16</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">k_reg</span><span class="p">;</span><span class="w"> </span><span class="c1">// Q and K are both row layout, as we use mma_ABt.</span>
+<span class="w">    </span><span class="n">qkvo_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">bf16</span><span class="p">,</span><span class="w"> </span><span class="n">col_l</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_reg</span><span class="p">;</span><span class="w"> </span><span class="c1">// V is column layout, as we use mma_AB.</span>
+<span class="w">    </span><span class="n">qkvo_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">o_reg</span><span class="p">;</span><span class="w"> </span><span class="c1">// Output tile.</span>
+<span class="w">    </span><span class="n">attn_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">att_block</span><span class="p">;</span><span class="w"> </span><span class="c1">// attention tile, in float. (We want to use float wherever possible.)</span>
+<span class="w">    </span><span class="n">attn_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">bf16</span><span class="o">&gt;</span><span class="w"> </span><span class="n">att_block_mma</span><span class="p">;</span><span class="w"> </span><span class="c1">// bf16 attention tile for the second mma_AB. We cast right before that op.</span>
+<span class="w">    </span><span class="n">typename</span><span class="w"> </span><span class="n">attn_tile</span><span class="o">&lt;</span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">col_vec</span><span class="w"> </span><span class="n">max_vec_last</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec</span><span class="p">,</span><span class="w"> </span><span class="n">norm_vec</span><span class="p">;</span><span class="w"> </span><span class="c1">// these are column vectors for the in-place softmax.</span>
+<span class="w">    </span><span class="c1">// each warp loads its own Q tile of 16x64</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q_seq</span><span class="o">*</span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Qg</span><span class="p">.</span><span class="n">rows</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">load</span><span class="p">(</span><span class="n">qo_smem</span><span class="p">[</span><span class="n">workerid</span><span class="p">],</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Qg</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">batch</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">q_seq</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w">  </span><span class="c1">// going through shared memory improves coalescing of dram reads.</span>
+<span class="w">        </span><span class="n">__syncwarp</span><span class="p">();</span>
+<span class="w">        </span><span class="n">load</span><span class="p">(</span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">qo_smem</span><span class="p">[</span><span class="n">workerid</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nf">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// temperature adjustment. Pre-multiplying by lg2(e), too, so we can use exp2 later.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">constexpr</span><span class="p">(</span><span class="n">D</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="n">mul</span><span class="p">(</span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">__float2bfloat16</span><span class="p">(</span><span class="mf">0.125f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.44269504089</span><span class="p">));</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">constexpr</span><span class="p">(</span><span class="n">D</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="n">mul</span><span class="p">(</span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">__float2bfloat16</span><span class="p">(</span><span class="mf">0.08838834764f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.44269504089</span><span class="p">));</span>
+<span class="w">    </span><span class="c1">// initialize flash attention L, M, and O registers.</span>
+<span class="w">    </span><span class="n">neg_infty</span><span class="p">(</span><span class="n">max_vec</span><span class="p">);</span><span class="w"> </span><span class="c1">// zero registers for the Q chunk</span>
+<span class="w">    </span><span class="n">zero</span><span class="p">(</span><span class="n">norm_vec</span><span class="p">);</span>
+<span class="w">    </span><span class="n">zero</span><span class="p">(</span><span class="n">o_reg</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// launch the load of the first k, v tiles</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kv_blocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Qg</span><span class="p">.</span><span class="n">rows</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">LOAD_BLOCKS</span><span class="o">*</span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">),</span><span class="w"> </span><span class="n">tic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">load_group</span><span class="o">::</span><span class="n">load_async</span><span class="p">(</span><span class="n">k_smem</span><span class="p">[</span><span class="n">loadid</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Kg</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">batch</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">loadid</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
+<span class="w">    </span><span class="n">load_group</span><span class="o">::</span><span class="n">load_async</span><span class="p">(</span><span class="n">v_smem</span><span class="p">[</span><span class="n">loadid</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Vg</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">batch</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">loadid</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
+<span class="w">    </span><span class="c1">// iterate over k, v for these q&#39;s that have been loaded</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">kv_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">kv_idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">kv_blocks</span><span class="p">;</span><span class="w"> </span><span class="n">kv_idx</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">tic</span><span class="o">=</span><span class="p">(</span><span class="n">tic</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">next_load_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">kv_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">LOAD_BLOCKS</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">loadid</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">next_load_idx</span><span class="o">*</span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Kg</span><span class="p">.</span><span class="n">rows</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">next_tic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">tic</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">;</span>
+<span class="w">            </span><span class="n">load_group</span><span class="o">::</span><span class="n">load_async</span><span class="p">(</span><span class="n">k_smem</span><span class="p">[</span><span class="n">loadid</span><span class="p">][</span><span class="n">next_tic</span><span class="p">],</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Kg</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">batch</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">next_load_idx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
+<span class="w">            </span><span class="n">load_group</span><span class="o">::</span><span class="n">load_async</span><span class="p">(</span><span class="n">v_smem</span><span class="p">[</span><span class="n">loadid</span><span class="p">][</span><span class="n">next_tic</span><span class="p">],</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Vg</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">batch</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">next_load_idx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
+<span class="w">            </span><span class="n">load_async_wait</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// next k, v can stay in flight.</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">load_async_wait</span><span class="p">();</span><span class="w"> </span><span class="c1">// all must arrive</span>
+<span class="w">        </span><span class="nf">__syncthreads</span><span class="p">();</span><span class="w"> </span><span class="c1">// Everyone&#39;s memory must be ready for the next stage.</span>
+<span class="w">        </span><span class="c1">// now each warp goes through all of the subtiles, loads them, and then does the flash attention internal alg.</span>
+<span class="w">        </span><span class="cp">#pragma unroll LOAD_BLOCKS</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">subtile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">subtile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LOAD_BLOCKS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">kv_idx</span><span class="o">*</span><span class="n">LOAD_BLOCKS</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">subtile</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Qg</span><span class="p">.</span><span class="n">rows</span><span class="p">;</span><span class="w"> </span><span class="n">subtile</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">load</span><span class="p">(</span><span class="n">k_reg</span><span class="p">,</span><span class="w"> </span><span class="n">k_smem</span><span class="p">[</span><span class="n">subtile</span><span class="p">][</span><span class="n">tic</span><span class="p">]);</span><span class="w"> </span><span class="c1">// load k from shared into registers</span>
+<span class="w">            </span><span class="n">zero</span><span class="p">(</span><span class="n">att_block</span><span class="p">);</span><span class="w"> </span><span class="c1">// zero 16x16 attention tile</span>
+<span class="w">            </span><span class="n">mma_ABt</span><span class="p">(</span><span class="n">att_block</span><span class="p">,</span><span class="w"> </span><span class="n">q_reg</span><span class="p">,</span><span class="w"> </span><span class="n">k_reg</span><span class="p">,</span><span class="w"> </span><span class="n">att_block</span><span class="p">);</span><span class="w"> </span><span class="c1">// Q@K.T</span>
+<span class="w">            </span><span class="n">copy</span><span class="p">(</span><span class="n">max_vec_last</span><span class="p">,</span><span class="w">  </span><span class="n">max_vec</span><span class="p">);</span>
+<span class="w">            </span><span class="n">row_max</span><span class="p">(</span><span class="n">max_vec</span><span class="p">,</span><span class="w"> </span><span class="n">att_block</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec</span><span class="p">);</span><span class="w"> </span><span class="c1">// accumulate onto the max_vec</span>
+<span class="w">            </span><span class="n">sub_row</span><span class="p">(</span><span class="n">att_block</span><span class="p">,</span><span class="w"> </span><span class="n">att_block</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec</span><span class="p">);</span><span class="w"> </span><span class="c1">// subtract max from attention -- now all &lt;=0</span>
+<span class="w">            </span><span class="n">exp2</span><span class="p">(</span><span class="n">att_block</span><span class="p">,</span><span class="w"> </span><span class="n">att_block</span><span class="p">);</span><span class="w"> </span><span class="c1">// exponentiate the block in-place.</span>
+<span class="w">            </span><span class="n">sub</span><span class="p">(</span><span class="n">max_vec_last</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec_last</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec</span><span class="p">);</span><span class="w"> </span><span class="c1">// subtract new max from old max to find the new normalization.</span>
+<span class="w">            </span><span class="n">exp2</span><span class="p">(</span><span class="n">max_vec_last</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec_last</span><span class="p">);</span><span class="w"> </span><span class="c1">// exponentiate this vector -- this is what we need to normalize by.</span>
+<span class="w">            </span><span class="n">mul</span><span class="p">(</span><span class="n">norm_vec</span><span class="p">,</span><span class="w"> </span><span class="n">norm_vec</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec_last</span><span class="p">);</span><span class="w"> </span><span class="c1">// and the norm vec is now normalized.</span>
+<span class="w">            </span><span class="n">row_sum</span><span class="p">(</span><span class="n">norm_vec</span><span class="p">,</span><span class="w"> </span><span class="n">att_block</span><span class="p">,</span><span class="w"> </span><span class="n">norm_vec</span><span class="p">);</span><span class="w"> </span><span class="c1">// accumulate the new attention block onto the now-rescaled norm_vec</span>
+<span class="w">            </span><span class="n">copy</span><span class="p">(</span><span class="n">att_block_mma</span><span class="p">,</span><span class="w"> </span><span class="n">att_block</span><span class="p">);</span><span class="w"> </span><span class="c1">// convert to bf16 for mma_AB</span>
+<span class="w">            </span><span class="n">load</span><span class="p">(</span><span class="n">v_reg</span><span class="p">,</span><span class="w"> </span><span class="n">v_smem</span><span class="p">[</span><span class="n">subtile</span><span class="p">][</span><span class="n">tic</span><span class="p">]);</span><span class="w"> </span><span class="c1">// load v from shared into registers.</span>
+<span class="w">            </span><span class="n">mul_row</span><span class="p">(</span><span class="n">o_reg</span><span class="p">,</span><span class="w"> </span><span class="n">o_reg</span><span class="p">,</span><span class="w"> </span><span class="n">max_vec_last</span><span class="p">);</span><span class="w"> </span><span class="c1">// normalize o_reg in advance of mma_AB&#39;ing onto it</span>
+<span class="w">            </span><span class="n">mma_AB</span><span class="p">(</span><span class="n">o_reg</span><span class="p">,</span><span class="w"> </span><span class="n">att_block_mma</span><span class="p">,</span><span class="w"> </span><span class="n">v_reg</span><span class="p">,</span><span class="w"> </span><span class="n">o_reg</span><span class="p">);</span><span class="w"> </span><span class="c1">// mfma onto o_reg with the local attention@V matmul.</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">div_row</span><span class="p">(</span><span class="n">o_reg</span><span class="p">,</span><span class="w"> </span><span class="n">o_reg</span><span class="p">,</span><span class="w"> </span><span class="n">norm_vec</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">__syncthreads</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">q_seq</span><span class="o">*</span><span class="n">ROWS</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Qg</span><span class="p">.</span><span class="n">rows</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// write out o.</span>
+<span class="w">        </span><span class="n">store</span><span class="p">(</span><span class="n">qo_smem</span><span class="p">[</span><span class="n">workerid</span><span class="p">],</span><span class="w"> </span><span class="n">o_reg</span><span class="p">);</span><span class="w"> </span><span class="c1">// going through shared memory improves coalescing of dram writes.</span>
+<span class="w">        </span><span class="n">__syncwarp</span><span class="p">();</span>
+<span class="w">        </span><span class="n">store</span><span class="p">(</span><span class="n">g</span><span class="p">.</span><span class="n">Og</span><span class="p">,</span><span class="w"> </span><span class="n">qo_smem</span><span class="p">[</span><span class="n">workerid</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">batch</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="n">q_seq</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Altogether, this is less than 100 lines of code, and achieves about 155 TFLOPs on an RTX 4090. (93% of theoretical max.) We’ll go through some of these primitives more carefully in the next section, the ThunderKittens manual.</p>
+<section id="demos">
+<h2>Demos<a class="headerlink" href="#demos" title="Link to this heading">#</a></h2>
+<p>We’ve included a set of starter demos in the <a class="reference external" href="https://github.com/HazyResearch/ThunderKittens/tree/main/demos">demos/</a> folder, showing how to use TK kernels for training and LLM inference (Qwens, Llamas, LoLCATS LLMs, etc.)!</p>
+<p>We are excited to feature any demos you build, please link PRs! Potential contributions:</p>
+<ul class="simple">
+<li><p>New kernels: attention decoding, parallel scan, training long convolutions</p></li>
+<li><p>New features: converting PyTorch to TK code, supporting new hardware (AMD?)</p></li>
+<li><p>Anything else that comes to mind!</p></li>
+</ul>
+</section>
+</section>
+<section id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Link to this heading">#</a></h1>
+<p>To validate your install, and run TK’s fairly comprehensive unit testing suite, simply run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j</span></code> in the tests folder. Be warned: this may nuke your computer for a minute or two while it compiles thousands of kernels.</p>
+</section>
+<section id="thunderkittens-manual">
+<h1>ThunderKittens Manual<a class="headerlink" href="#thunderkittens-manual" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://docs.google.com/document/d/15-Zvf6e0NLX1si4ml4sUOWCDlXNMtOWKiuo6CKZMEYA/edit?usp=sharing">In-progress onboarding document</a>. Please contribute to this if you’ve run into issues and feel the broader community can benefit from explanations. Please leave comments if any aspect of this is unclear.</p>
+<p>ThunderKittens is actually a pretty small library, in terms of what it gives you.</p>
+<ul class="simple">
+<li><p>Data types: (Register + shared) * (tiles + vectors), all parameterized by layout, type, and size.</p></li>
+<li><p>Operations for manipulating these objects.</p></li>
+</ul>
+<p>Despite its simplicity, there are still a few sharp edges that you might encounter if you don’t know what’s going on under the hood. So, we do recommend giving this manual a good read before sitting down to write a kernel – it’s not too long, we promise!</p>
+<section id="nvidias-programming-model">
+<h2>NVIDIA’s Programming Model<a class="headerlink" href="#nvidias-programming-model" title="Link to this heading">#</a></h2>
+<p>To understand ThunderKittens, it will help to begin by reviewing a bit of how NVIDIA’s programming model works, as NVIDIA provides a few different “scopes” to think about when writing parallel code.</p>
+<ol class="arabic simple">
+<li><p>Thread – this is the level of doing work on an individual bit of data, like a floating point multiplication. A thread has up to 256 32-bit registers it can access every cycle.</p></li>
+<li><p>Warp – 32 threads make a warp. This is the level at which instructions are issued by the hardware. It’s also the base (and default) scope from which ThunderKittens operates; most ThunderKittens programming happens here.</p></li>
+<li><p>Warpgroup – 4 warps make a warpgroup. This is the level from which asynchronous warpgroup matrix multiply-accumulate instructions are issued. (We really wish we could ignore this level, but you unfortunately need it for the H100.) Correspondingly, many matrix multiply and memory operations are supported at the warpgroup level.</p></li>
+<li><p>Block – N warps make a block, which is the level that shares “shared memory” in the CUDA programming model. In ThunderKittens, N is often 8.</p></li>
+<li><p>Grid – M blocks make a grid, where M should be equal to (or slightly less) than a multiple of the number of SMs on the GPU to avoid tail effects. ThunderKittens does not touch the grid scope except through helping initialize TMA descriptors.</p></li>
+</ol>
+<p>“Register” objects exist at the level of warps – their contents is split amongst the threads of the warp. Register objects include:</p>
+<ul class="simple">
+<li><p>Register tiles, declared as the <code class="docutils literal notranslate"><span class="pre">kittens::rt</span></code> struct in <code class="docutils literal notranslate"><span class="pre">src/register_tile/rt.cuh</span></code>. Kittens provides a few useful wrappers – for example, a 32 row, 16 column, row-layout bfloat16 register tile can be declared as <code class="docutils literal notranslate"><span class="pre">kittens::rt_bf&lt;32,16&gt;;</span></code> – row-layout is implicit by default.</p></li>
+<li><p>Register vectors, which are associated with register tiles. They come in three flavors: naive, aligned, and orthogonal. What’s going on under the hood is a bit too complicated for a readme, but what you need to know is that the naive layout is used for when you expect to do lots of compute on vectors (like a layernorm), and otherewise you should just instantiate column or row vectors depending on how you want to interact with a tile, and let TK take care of the layout for you. Column vectors are used to reduce or map across tile rows (it’s a single column of the tile), and row vectors reduce and map across tile columns (a single row of the tile). For example, to hold the sum of the rows of the tile declared above, we would create a <code class="docutils literal notranslate"><span class="pre">kittens::rt_bf&lt;32,16&gt;::col_vec;</span></code>
+In contrast, “Shared” objects exist at the level of the block, and sit only in shared memory.</p></li>
+</ul>
+<p>All ThunderKittens functions follow a common signature. Much like an assembly language (ThunderKittens’ origin comes from thinking about an idealized tile-oriented RISC instruction set), the destination of every function is the first operand, and the source operands are passed sequentially afterwards.</p>
+<p>For example, if we have three 32 row, 64 col floating point register tiles: <code class="docutils literal notranslate"><span class="pre">kittens::rt_fl&lt;32,64&gt;</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c;</span></code>, we can element-wise multiply <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> and store the result in <code class="docutils literal notranslate"><span class="pre">c</span></code> with the following call: <code class="docutils literal notranslate"><span class="pre">kittens::mul(c,</span> <span class="pre">a,</span> <span class="pre">b);</span></code>.</p>
+<p>Similarly, if we want to then store the result into a half-precision shared tile <code class="docutils literal notranslate"><span class="pre">__shared__</span> <span class="pre">kittens:st_hf&lt;32,</span> <span class="pre">64&gt;</span> <span class="pre">s;</span></code>, we write the function analogously: <code class="docutils literal notranslate"><span class="pre">kittens::store(s,</span> <span class="pre">c);</span></code>.</p>
+</section>
+<section id="typing">
+<h2>Typing<a class="headerlink" href="#typing" title="Link to this heading">#</a></h2>
+<p>ThunderKittens tries hard to protect you from yourself. In particular, ThunderKittens wants to know layouts of objects at compile-time and will make sure they’re compatible before letting you do operations. This is important because there are subtleties to the allowable layouts for certain operations, and without static checks it is very easy to get painful silent failures. For example, a normal matrix multiply requires the B operand to be in a column layout, whereas an outer dot product requires the B operand to be in a row layout.</p>
+<p>If you are being told an operation that you think exists doesn’t exist, double-check your layouts – this is the most common error. Only then report a bug :)</p>
+</section>
+<section id="scopes">
+<h2>Scopes<a class="headerlink" href="#scopes" title="Link to this heading">#</a></h2>
+<p>By default, ThunderKittens operations exist at the warp-level. In other words, each function expects to be called by only a single warp, and that single warp will do all of the work of the function. If multiple warps are assigned to the same work, undefined behavior will result. (And if the operation involves memory movement, it is likely to be completely catastrophic.) In general, you should expect your programming pattern to involve instantiating a <code class="docutils literal notranslate"><span class="pre">warpid</span></code> at the beginning of the kernel with <code class="docutils literal notranslate"><span class="pre">kittens::warpid()</span></code>, and assigning tasks to data based on that id.</p>
+<p>However, not all ThunderKittens functions operate at the warp level. Many important operations, particularly WGMMA instructions, require collaborative groups of warps. These operations exist in the templated <code class="docutils literal notranslate"><span class="pre">kittens::group&lt;collaborative</span> <span class="pre">size&gt;</span></code>. For example, wgmma instructions are available through <code class="docutils literal notranslate"><span class="pre">kittens::group&lt;4&gt;::mma_AB</span></code> (or <code class="docutils literal notranslate"><span class="pre">kittens::warpgroup::mma_AB</span></code>, which is an alias.) Groups of warps can also collaboratively load shared memory or do reductions in shared memory</p>
+</section>
+<section id="other-restrictions">
+<h2>Other Restrictions<a class="headerlink" href="#other-restrictions" title="Link to this heading">#</a></h2>
+<p>Most operations in ThunderKittens are pure functional. However, some operations <em>do</em> have special restrictions; ThunderKittens tries to warn you by giving them names that stand out. For example, a register tile transpose needs separable arguments: if it is given the same underlying registers as both source and destination, it will silently fail. Consequently, it is named <code class="docutils literal notranslate"><span class="pre">transpose_sep</span></code>.</p>
+</section>
+</section>
+<section id="learn-more-and-get-involved">
+<h1>Learn more and get involved!<a class="headerlink" href="#learn-more-and-get-involved" title="Link to this heading">#</a></h1>
+<p>Learn more about ThunderKittens and how GPUs work by checking out our blogs:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://hazyresearch.stanford.edu/blog/2024-10-29-tk2">Easier, Better, Faster, Cuter Blogpost, Oct. 2024</a></p></li>
+<li><p><a class="reference external" href="https://hazyresearch.stanford.edu/blog/2024-05-12-tk">GPUs Go Brrr Blogpost, May 2024</a></p></li>
+<li><p><a class="reference external" href="https://hazyresearch.stanford.edu/blog/2024-11-27-tk-fp8">ThunderKittens: Bringing fp8 to theaters near you, Nov 2024</a></p></li>
+<li><p><a class="reference external" href="https://hazyresearch.stanford.edu/blog/2024-11-28-tk-mlx">ThunderMittens For Your ThunderKittens, Nov 2024</a></p></li>
+</ul>
+<p>Please check out our paper for even more details: <a class="reference external" href="https://arxiv.org/abs/2410.20399">paper</a></p>
+<p>Join us and get involved at the <a class="reference external" href="https://discord.com/channels/1189498204333543425/1300872762163728550">ThunderKittens channel &#64; GPU Mode Discord</a>!!!!  Here is the invite link to GPU mode: <a class="reference external" href="https://discord.gg/gpumode">https://discord.gg/gpumode</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Installation and Setup"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Getting started</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demos">Demos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#thunderkittens-manual">ThunderKittens Manual</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidias-programming-model">NVIDIA’s Programming Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typing">Typing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scopes">Scopes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-restrictions">Other Restrictions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-and-get-involved">Learn more and get involved!</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
