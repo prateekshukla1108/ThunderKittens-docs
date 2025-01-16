@@ -13,14 +13,21 @@ But ThunderKittens does use a bunch of modern stuff, so it has fairly aggressive
 ```bash
 sudo apt update
 sudo apt install gcc-11 g++-11
+```
 
+```
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100 --slave /usr/bin/g++ g++ /usr/bin/g++-11
+```
 
+
+```
 sudo apt update
 sudo apt install clang-11
 ```
 
 If you can't find nvcc, or you experience issues where your environment is pointing to the wrong CUDA version:
+
+
 ```bash
 export CUDA_HOME=/usr/local/cuda-12.6/
 export PATH=${CUDA_HOME}/bin:${PATH} 
@@ -38,6 +45,8 @@ To compile examples, run `source env.src` from the root directory before going i
 2. Select the kernels you want to build in `configs.py` file
 
 3. Install:
+
+
 ```bash
 python setup.py install
 ```
