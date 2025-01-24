@@ -8,10 +8,10 @@ SMs are the building blocks that enable massive parallelism, allowing GPUs to ha
 
 Now there are a lot of things going under the hood in SMs. To understand that we need to understand what is inside SM. So here is a basic overview of the components of SM - 
 
-## Components of SM
+### Components of SM
 
-### **1. CUDA Cores**  
-#### **Technical Details**  
+#### **1. CUDA Cores**  
+##### **Technical Details**  
 - **Architecture**: CUDA cores are simplified arithmetic logic units (ALUs) optimized for parallel floating-point and integer operations. Unlike CPU cores, which handle complex instruction pipelines and branch prediction, CUDA cores focus on throughput over latency.  
 - **Precision Modes**:  
   - **FP32**: Primary focus for graphics and general-purpose compute (e.g., matrix operations in AI).  
@@ -21,14 +21,14 @@ Now there are a lot of things going under the hood in SMs. To understand that we
   - In **Ampere** (e.g., GA102 in RTX 3090), each SM contains **128 FP32 CUDA cores** and **64 INT32 cores**, allowing concurrent FP32+INT32 execution.  
   - **Hopper** (H100) introduces **FP8 Tensor Cores**, emphasizing AI workloads.  
 
-#### **Practical Implications**  
+##### **Practical Implications**  
 - **Throughput vs. Latency**: GPUs prioritize executing many threads in parallel rather than speeding up single threads.  
 - **Data Type Selection**: Using lower precision (FP16/INT8) can double throughput on architectures with dedicated cores (e.g., Tensor Cores).  
 
 ---
 
-### **2. Warp Schedulers**  
-#### **Technical Details**  
+#### **2. Warp Schedulers**  
+##### **Technical Details**  
 - **Warp Mechanics**:  
   - A warp (32 threads) is the smallest executable unit. Threads in a warp follow the same instruction path (SIMT).  
   - **Warp Divergence**: If threads branch (e.g., `if/else`), both paths execute sequentially, halving efficiency. Use `__syncwarp()` or restructuring (e.g., pre-sorting data) to mitigate.  
@@ -38,14 +38,14 @@ Now there are a lot of things going under the hood in SMs. To understand that we
     - **Volta+**: 4 warp schedulers/SM, enabling 2 instructions per clock (via **independent thread scheduling**).  
     - **Ampere**: Enhanced to handle concurrent FP32 and INT32 operations.  
 
-#### **Latency Hiding**  
+##### **Latency Hiding**  
 - **Memory Latency**: When a warp stalls (e.g., global memory access), schedulers switch to ready warps. High **occupancy** (active warps/SM) ensures better latency hiding.  
 - **Occupancy Calculator**: NVIDIA provides tools to estimate occupancy based on thread block size and resource usage (registers/shared memory).  
 
 ---
 
-### **3. Registers**  
-#### **Technical Details**  
+#### **3. Registers**  
+##### **Technical Details**  
 - **Per-Thread Storage**: Each thread has a private register set (e.g., 255 registers/thread on Ampere).  
 - **Register Spilling**: If registers exceed hardware limits, data spills to slower memory (local/global), crippling performance. Use `--ptxas-options=-v` to check spills.  
 - **Occupancy Trade-off**:  
@@ -53,12 +53,12 @@ Now there are a lot of things going under the hood in SMs. To understand that we
     - 2048 threads if each uses 32 registers (2048 × 32 = 65,536).  
     - 1024 threads if each uses 64 registers (1024 × 64 = 65,536).  
 
-### **4. Shared Memory**  
+#### **4. Shared Memory**  
 **Definition**:  
 Shared Memory in GPU architectures is a high-speed, programmable memory space located on the Streaming Multiprocessor (SM) itself. It is explicitly managed by the programmer and shared among all threads within a single thread block. Unlike global memory (off-chip DRAM), shared memory provides **nanosecond-level latency** (similar to L1 cache) due to its on-chip location, making it orders of magnitude faster than global memory. Its primary purpose is to enable efficient data sharing and collaboration between threads in a block, reducing redundant global memory accesses.
 
 
-#### **Function**:  
+##### **Function**:  
 1. **Data Reuse and Collaboration**:  
    - **Stencil Operations**: In algorithms like image convolution or PDE solvers, threads often require neighboring data (e.g., a 3x3 pixel grid). Shared memory allows threads to load a block of data once, reuse it across multiple threads, and avoid repeated global memory fetches.  
    - **Reductions**: Operations like sum, max, or min across a thread block benefit from shared memory. Threads compute partial results, store them in shared memory, and iteratively combine results in parallel (e.g., using a tree-based reduction).  
@@ -70,15 +70,15 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
    - **Bank Conflict Avoidance**: Shared memory is divided into 32 banks (on most GPUs). Concurrent accesses to the same bank cause serialization. Programmers use techniques like memory padding or strided access patterns to mitigate conflicts.
 
 
-#### **Capacity and Architecture Dependence**:  
+##### **Capacity and Architecture Dependence**:  
 - **Size**: Typically 64–128 KB per SM, but this varies by architecture (e.g., NVIDIA Ampere GPUs allocate up to 164 KB).  
 - **Configurability**: On architectures like Fermi or Kepler, shared memory and L1 cache partition a 64 KB memory pool. Programmers can prioritize shared memory (e.g., 48 KB shared + 16 KB L1) using `cudaFuncSetCacheConfig()`.  
 - **Limitations**: Overuse can lead to resource contention, limiting the number of active thread blocks per SM.
 
 ---
 
-### **5. L1 Cache/Texture Units**  
-#### **L1 Cache**:  
+#### **5. L1 Cache/Texture Units**  
+##### **L1 Cache**:  
 **Function**:  
 - The L1 cache is a hardware-managed memory that automatically caches frequently accessed data from global or local memory. It reduces latency by storing recently used data closer to the SM.  
 - **Spatial and Temporal Locality**: Optimized for access patterns where data is reused (e.g., looping over an array multiple times).  
@@ -88,7 +88,7 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 - **Trade-offs**: Increasing shared memory size reduces L1 cache, which may impact caching efficiency for irregular memory access patterns.
 
 
-#### **Texture Units**:  
+##### **Texture Units**:  
 **Function**:  
 - **Hardware-Accelerated Filtering**: Texture units are specialized for graphics tasks like bilinear/trilinear filtering, which interpolate texel values (e.g., smoothing pixels in zoomed images).  
 - **Cache Optimization**: Texture memory uses a dedicated cache optimized for 2D/3D spatial locality, making it ideal for image processing (e.g., volume rendering, computer vision).  
@@ -102,8 +102,8 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 
 ---
 
-### **6. Specialized Cores**  
-#### **Tensor Cores** (Volta+ Architectures):  
+#### **6. Specialized Cores**  
+##### **Tensor Cores** (Volta+ Architectures):  
 **Function**:  
 - **Mixed-Precision Matrix Operations**: Accelerate matrix multiply-accumulate (MMA) operations, such as \( D = A \times B + C \), where \( A, B, C, D \) can be FP16, BF16, INT8, or FP64 matrices.  
 - **Throughput**: A single Tensor Core can compute a 4x4x4 matrix multiplication per clock cycle, delivering up to 125 TFLOPS (FP16) on NVIDIA A100 GPUs.  
@@ -118,26 +118,26 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 
 ---
 
-#### **Performance Impact**:  
+##### **Performance Impact**:  
 - **Tensor Cores**: Reduce training times for AI models from weeks to days. For example, ResNet-50 training can be accelerated by 6x using Tensor Cores.  
 - **RT Cores**: Enable real-time ray tracing at 60+ FPS in games like *Cyberpunk 2077*, which would otherwise require orders of magnitude more computation on CUDA cores.  
 
 ---
 
-#### **Architectural Considerations**  
+##### **Architectural Considerations**  
 - **Shared Memory vs L1 Cache**: Choose shared memory for predictable, collaborative data reuse; rely on L1 for irregular access with locality.  
 - **Tensor/RT Core Availability**: Requires GPU architectures from Volta (2017) or Turing (2018) onward.  
 - **Trade-offs**: Specialized cores increase silicon area but provide unmatched efficiency for targeted workloads.
 
 ---
 
-### **7. Warps**  
+#### **7. Warps**  
 **Definition**:  
 A **warp** is the fundamental unit of execution in a GPU, consisting of a group of **32 threads** that operate in **lockstep** (SIMD: Single Instruction, Multiple Data). Warps are managed by the Streaming Multiprocessor (SM) and represent the smallest schedulable unit of work. All threads in a warp execute the same instruction simultaneously, leveraging parallelism at the instruction level.
 
 ---
 
-#### **Function**:  
+##### **Function**:  
 1. **Scheduling and Execution**:  
    - The SM schedules warps, not individual threads. At every clock cycle, the **warp scheduler** selects a warp that is ready to execute (e.g., not stalled waiting for data).  
    - **Lockstep Execution**: All 32 threads in a warp execute the same instruction on different data. For example, in a vector addition kernel, a warp might compute 32 elements of the vector concurrently.  
@@ -152,7 +152,7 @@ A **warp** is the fundamental unit of execution in a GPU, consisting of a group 
 
 ---
 
-### **8. Memory Hierarchy**  
+#### **8. Memory Hierarchy**  
 The GPU memory hierarchy is a tiered structure designed to balance speed, capacity, and programmability:  
 
 1. **Registers** (Fastest):  
@@ -176,7 +176,7 @@ The GPU memory hierarchy is a tiered structure designed to balance speed, capaci
 
 ---
 
-### **9. Latency Hiding**  
+#### **9. Latency Hiding**  
 **Mechanism**:  
 - **Warp-Level Multithreading**: When a warp stalls (e.g., waiting for global memory), the SM immediately switches to another **ready warp** (one with all operands available).  
 - **Occupancy**: The ratio of active warps to the maximum supported by the SM (e.g., 64 warps/SM on Ampere). Higher occupancy improves latency hiding.  
@@ -194,7 +194,7 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 
 ---
 
-### **10. Thread Block Execution**  
+#### **10. Thread Block Execution**  
 **Assignment**:  
 - Each thread block is statically assigned to an SM at launch and remains there until completion.  
 - **SM Resources**: The number of blocks per SM depends on:  
@@ -212,23 +212,18 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 
 ---
 
-### **Architectural Considerations**  
+#### **Architectural Considerations**  
 - **Warp Efficiency**: Minimize divergence and maximize instruction-level parallelism (ILP) to keep warps active.  
 - **Memory Hierarchy**: Prioritize register/local memory for thread-private data, shared memory for collaboration, and optimize global memory access patterns.  
 - **Latency Hiding**: Design kernels to maximize independent work (warps) and balance compute/memory operations.  
 - **Block Configuration**: Tailor block size to SM resource limits for optimal occupancy.  
 
 
-#### **Optimization Strategies**  
-- **Compiler Directives**: Use `__launch_bounds__(MAX_THREADS_PER_BLOCK, MIN_BLOCKS_PER_SM)` to hint register limits.  
-- **Shared Memory**: Offload reusable data to shared memory (1-2 cycles latency vs. hundreds for global memory).  
-
 ---
 
 Now different Architectures have different specs. So to cut the hassle here's a basic overview - 
 
 ### **Comparison of All the GPU Architectures**  
-Here’s the corrected table with improved formatting and alignment while keeping the content unchanged:
 
 | Architecture | CUDA Cores/SM          | Warp Schedulers/SM | Tensor Cores | RT Cores | Memory Tech      | Key Features                                      | Process Node     |  
 |--------------|------------------------|--------------------|--------------|----------|------------------|---------------------------------------------------|------------------|  

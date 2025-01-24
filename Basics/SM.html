@@ -176,6 +176,7 @@
 </ul>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Components of SM</a></li>
+
 </ul>
 
     </div>
@@ -368,6 +369,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Components of SM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
@@ -405,12 +407,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-strategies"><strong>Optimization Strategies</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -746,19 +748,12 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 <li><p><strong>Latency Hiding</strong>: Design kernels to maximize independent work (warps) and balance compute/memory operations.</p></li>
 <li><p><strong>Block Configuration</strong>: Tailor block size to SM resource limits for optimal occupancy.</p></li>
 </ul>
-<section id="optimization-strategies">
-<h3><strong>Optimization Strategies</strong><a class="headerlink" href="#optimization-strategies" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Compiler Directives</strong>: Use <code class="docutils literal notranslate"><span class="pre">__launch_bounds__(MAX_THREADS_PER_BLOCK,</span> <span class="pre">MIN_BLOCKS_PER_SM)</span></code> to hint register limits.</p></li>
-<li><p><strong>Shared Memory</strong>: Offload reusable data to shared memory (1-2 cycles latency vs. hundreds for global memory).</p></li>
-</ul>
 <hr class="docutils" />
 <p>Now different Architectures have different specs. So to cut the hassle here’s a basic overview -</p>
 </section>
 </section>
 <section id="comparison-of-all-the-gpu-architectures">
-<h2><strong>Comparison of All the GPU Architectures</strong><a class="headerlink" href="#comparison-of-all-the-gpu-architectures" title="Link to this heading">#</a></h2>
-<p>Here’s the corrected table with improved formatting and alignment while keeping the content unchanged:</p>
+<h1><strong>Comparison of All the GPU Architectures</strong><a class="headerlink" href="#comparison-of-all-the-gpu-architectures" title="Link to this heading">#</a></h1>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Architecture</p></th>
@@ -857,7 +852,6 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 </table>
 </div>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -915,6 +909,7 @@ In matrix multiplication, while one warp loads the next tile from global memory,
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Components of SM</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
@@ -952,12 +947,12 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-strategies"><strong>Optimization Strategies</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
