@@ -17,6 +17,7 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    environment: github-pages  # Add this line to specify an environment
     permissions:
       pages: write
       id-token: write
