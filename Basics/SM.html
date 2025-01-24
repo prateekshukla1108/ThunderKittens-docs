@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Components of SM &#8212; My sample book</title>
+    <title>SM &#8212; My sample book</title>
   
   
   
@@ -175,8 +175,7 @@
 
 </ul>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Components of SM</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SM</a></li>
 </ul>
 
     </div>
@@ -359,7 +358,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Components of SM</h1>
+    <h1>SM</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,50 +368,49 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Components of SM</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-sm">Components of SM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-schedulers"><strong>2. Warp Schedulers</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Technical Details</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latency-hiding"><strong>Latency Hiding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-schedulers"><strong>2. Warp Schedulers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Technical Details</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#latency-hiding"><strong>Latency Hiding</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registers"><strong>3. Registers</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Technical Details</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registers"><strong>3. Registers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Technical Details</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-memory"><strong>4. Shared Memory</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function"><strong>Function</strong>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacity-and-architecture-dependence"><strong>Capacity and Architecture Dependence</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-memory"><strong>4. Shared Memory</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function"><strong>Function</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacity-and-architecture-dependence"><strong>Capacity and Architecture Dependence</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache-texture-units"><strong>5. L1 Cache/Texture Units</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache"><strong>L1 Cache</strong>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-units"><strong>Texture Units</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache-texture-units"><strong>5. L1 Cache/Texture Units</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache"><strong>L1 Cache</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-units"><strong>Texture Units</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-cores"><strong>6. Specialized Cores</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-cores-volta-architectures"><strong>Tensor Cores</strong> (Volta+ Architectures):</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact"><strong>Performance Impact</strong>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-considerations"><strong>Architectural Considerations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-cores"><strong>6. Specialized Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-cores-volta-architectures"><strong>Tensor Cores</strong> (Volta+ Architectures):</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact"><strong>Performance Impact</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-considerations"><strong>Architectural Considerations</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warps"><strong>7. Warps</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Function</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warps"><strong>7. Warps</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Function</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -423,17 +421,19 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>In this lesson we will break down the key components of Nvidia Hopper GPU architecture, focusing on SMs (Streaming Multiprocessors), L2 cache sections, and memory controllers.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sm">
+<h1>SM<a class="headerlink" href="#sm" title="Link to this heading">#</a></h1>
+<p>In this lesson we will break down the key components of Nvidia Hopper GPU architecture, focusing on SMs (Streaming Multiprocessors), L2 cache sections, and memory controllers.</p>
 <p>Streaming Multiprocessors (SMs) in Nvidia Hopper:</p>
 <p>Streaming Multiprocessors (SMs) of NVIDIA GPUs are roughly analogous to the cores of CPUs. That is, SMs both execute computations and store state available for computation in registers, with associated caches. Compared to CPU cores, GPU SMs are simple, weak processors. Execution in SMs is pipelined within an instruction (as in almost all CPUs since the 1990s) but there is no speculative execution or instruction pointer prediction (unlike all contemporary high-performance computation CPUs).</p>
 <p>SMs are the building blocks that enable massive parallelism, allowing GPUs to handle thousands of threads simultaneously. Each SM operates independently, managing threads, memory, and computations within its domain.</p>
 <p>Now there are a lot of things going under the hood in SMs. To understand that we need to understand what is inside SM. So here is a basic overview of the components of SM -</p>
 <section id="components-of-sm">
-<h1>Components of SM<a class="headerlink" href="#components-of-sm" title="Link to this heading">#</a></h1>
+<h2>Components of SM<a class="headerlink" href="#components-of-sm" title="Link to this heading">#</a></h2>
 <section id="cuda-cores">
-<h2><strong>1. CUDA Cores</strong><a class="headerlink" href="#cuda-cores" title="Link to this heading">#</a></h2>
+<h3><strong>1. CUDA Cores</strong><a class="headerlink" href="#cuda-cores" title="Link to this heading">#</a></h3>
 <section id="technical-details">
-<h3><strong>Technical Details</strong><a class="headerlink" href="#technical-details" title="Link to this heading">#</a></h3>
+<h4><strong>Technical Details</strong><a class="headerlink" href="#technical-details" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Architecture</strong>: CUDA cores are simplified arithmetic logic units (ALUs) optimized for parallel floating-point and integer operations. Unlike CPU cores, which handle complex instruction pipelines and branch prediction, CUDA cores focus on throughput over latency.</p></li>
 <li><p><strong>Precision Modes</strong>:</p>
@@ -452,7 +452,7 @@
 </ul>
 </section>
 <section id="practical-implications">
-<h3><strong>Practical Implications</strong><a class="headerlink" href="#practical-implications" title="Link to this heading">#</a></h3>
+<h4><strong>Practical Implications</strong><a class="headerlink" href="#practical-implications" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Throughput vs. Latency</strong>: GPUs prioritize executing many threads in parallel rather than speeding up single threads.</p></li>
 <li><p><strong>Data Type Selection</strong>: Using lower precision (FP16/INT8) can double throughput on architectures with dedicated cores (e.g., Tensor Cores).</p></li>
@@ -461,9 +461,9 @@
 </section>
 <hr class="docutils" />
 <section id="warp-schedulers">
-<h2><strong>2. Warp Schedulers</strong><a class="headerlink" href="#warp-schedulers" title="Link to this heading">#</a></h2>
+<h3><strong>2. Warp Schedulers</strong><a class="headerlink" href="#warp-schedulers" title="Link to this heading">#</a></h3>
 <section id="id1">
-<h3><strong>Technical Details</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h4><strong>Technical Details</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Warp Mechanics</strong>:</p>
 <ul>
@@ -485,7 +485,7 @@
 </ul>
 </section>
 <section id="latency-hiding">
-<h3><strong>Latency Hiding</strong><a class="headerlink" href="#latency-hiding" title="Link to this heading">#</a></h3>
+<h4><strong>Latency Hiding</strong><a class="headerlink" href="#latency-hiding" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Memory Latency</strong>: When a warp stalls (e.g., global memory access), schedulers switch to ready warps. High <strong>occupancy</strong> (active warps/SM) ensures better latency hiding.</p></li>
 <li><p><strong>Occupancy Calculator</strong>: NVIDIA provides tools to estimate occupancy based on thread block size and resource usage (registers/shared memory).</p></li>
@@ -494,9 +494,9 @@
 </section>
 <hr class="docutils" />
 <section id="registers">
-<h2><strong>3. Registers</strong><a class="headerlink" href="#registers" title="Link to this heading">#</a></h2>
+<h3><strong>3. Registers</strong><a class="headerlink" href="#registers" title="Link to this heading">#</a></h3>
 <section id="id2">
-<h3><strong>Technical Details</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h4><strong>Technical Details</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Per-Thread Storage</strong>: Each thread has a private register set (e.g., 255 registers/thread on Ampere).</p></li>
 <li><p><strong>Register Spilling</strong>: If registers exceed hardware limits, data spills to slower memory (local/global), crippling performance. Use <code class="docutils literal notranslate"><span class="pre">--ptxas-options=-v</span></code> to check spills.</p></li>
@@ -514,11 +514,11 @@
 </section>
 </section>
 <section id="shared-memory">
-<h2><strong>4. Shared Memory</strong><a class="headerlink" href="#shared-memory" title="Link to this heading">#</a></h2>
+<h3><strong>4. Shared Memory</strong><a class="headerlink" href="#shared-memory" title="Link to this heading">#</a></h3>
 <p><strong>Definition</strong>:<br />
 Shared Memory in GPU architectures is a high-speed, programmable memory space located on the Streaming Multiprocessor (SM) itself. It is explicitly managed by the programmer and shared among all threads within a single thread block. Unlike global memory (off-chip DRAM), shared memory provides <strong>nanosecond-level latency</strong> (similar to L1 cache) due to its on-chip location, making it orders of magnitude faster than global memory. Its primary purpose is to enable efficient data sharing and collaboration between threads in a block, reducing redundant global memory accesses.</p>
 <section id="function">
-<h3><strong>Function</strong>:<a class="headerlink" href="#function" title="Link to this heading">#</a></h3>
+<h4><strong>Function</strong>:<a class="headerlink" href="#function" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p><strong>Data Reuse and Collaboration</strong>:</p>
 <ul class="simple">
@@ -537,7 +537,7 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </ol>
 </section>
 <section id="capacity-and-architecture-dependence">
-<h3><strong>Capacity and Architecture Dependence</strong>:<a class="headerlink" href="#capacity-and-architecture-dependence" title="Link to this heading">#</a></h3>
+<h4><strong>Capacity and Architecture Dependence</strong>:<a class="headerlink" href="#capacity-and-architecture-dependence" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Size</strong>: Typically 64–128 KB per SM, but this varies by architecture (e.g., NVIDIA Ampere GPUs allocate up to 164 KB).</p></li>
 <li><p><strong>Configurability</strong>: On architectures like Fermi or Kepler, shared memory and L1 cache partition a 64 KB memory pool. Programmers can prioritize shared memory (e.g., 48 KB shared + 16 KB L1) using <code class="docutils literal notranslate"><span class="pre">cudaFuncSetCacheConfig()</span></code>.</p></li>
@@ -547,9 +547,9 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </section>
 <hr class="docutils" />
 <section id="l1-cache-texture-units">
-<h2><strong>5. L1 Cache/Texture Units</strong><a class="headerlink" href="#l1-cache-texture-units" title="Link to this heading">#</a></h2>
+<h3><strong>5. L1 Cache/Texture Units</strong><a class="headerlink" href="#l1-cache-texture-units" title="Link to this heading">#</a></h3>
 <section id="l1-cache">
-<h3><strong>L1 Cache</strong>:<a class="headerlink" href="#l1-cache" title="Link to this heading">#</a></h3>
+<h4><strong>L1 Cache</strong>:<a class="headerlink" href="#l1-cache" title="Link to this heading">#</a></h4>
 <p><strong>Function</strong>:</p>
 <ul class="simple">
 <li><p>The L1 cache is a hardware-managed memory that automatically caches frequently accessed data from global or local memory. It reduces latency by storing recently used data closer to the SM.</p></li>
@@ -562,7 +562,7 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </ul>
 </section>
 <section id="texture-units">
-<h3><strong>Texture Units</strong>:<a class="headerlink" href="#texture-units" title="Link to this heading">#</a></h3>
+<h4><strong>Texture Units</strong>:<a class="headerlink" href="#texture-units" title="Link to this heading">#</a></h4>
 <p><strong>Function</strong>:</p>
 <ul class="simple">
 <li><p><strong>Hardware-Accelerated Filtering</strong>: Texture units are specialized for graphics tasks like bilinear/trilinear filtering, which interpolate texel values (e.g., smoothing pixels in zoomed images).</p></li>
@@ -583,9 +583,9 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </section>
 <hr class="docutils" />
 <section id="specialized-cores">
-<h2><strong>6. Specialized Cores</strong><a class="headerlink" href="#specialized-cores" title="Link to this heading">#</a></h2>
+<h3><strong>6. Specialized Cores</strong><a class="headerlink" href="#specialized-cores" title="Link to this heading">#</a></h3>
 <section id="tensor-cores-volta-architectures">
-<h3><strong>Tensor Cores</strong> (Volta+ Architectures):<a class="headerlink" href="#tensor-cores-volta-architectures" title="Link to this heading">#</a></h3>
+<h4><strong>Tensor Cores</strong> (Volta+ Architectures):<a class="headerlink" href="#tensor-cores-volta-architectures" title="Link to this heading">#</a></h4>
 <p><strong>Function</strong>:</p>
 <ul class="simple">
 <li><p><strong>Mixed-Precision Matrix Operations</strong>: Accelerate matrix multiply-accumulate (MMA) operations, such as ( D = A \times B + C ), where ( A, B, C, D ) can be FP16, BF16, INT8, or FP64 matrices.</p></li>
@@ -604,7 +604,7 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </section>
 <hr class="docutils" />
 <section id="performance-impact">
-<h3><strong>Performance Impact</strong>:<a class="headerlink" href="#performance-impact" title="Link to this heading">#</a></h3>
+<h4><strong>Performance Impact</strong>:<a class="headerlink" href="#performance-impact" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Tensor Cores</strong>: Reduce training times for AI models from weeks to days. For example, ResNet-50 training can be accelerated by 6x using Tensor Cores.</p></li>
 <li><p><strong>RT Cores</strong>: Enable real-time ray tracing at 60+ FPS in games like <em>Cyberpunk 2077</em>, which would otherwise require orders of magnitude more computation on CUDA cores.</p></li>
@@ -612,7 +612,7 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </section>
 <hr class="docutils" />
 <section id="architectural-considerations">
-<h3><strong>Architectural Considerations</strong><a class="headerlink" href="#architectural-considerations" title="Link to this heading">#</a></h3>
+<h4><strong>Architectural Considerations</strong><a class="headerlink" href="#architectural-considerations" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Shared Memory vs L1 Cache</strong>: Choose shared memory for predictable, collaborative data reuse; rely on L1 for irregular access with locality.</p></li>
 <li><p><strong>Tensor/RT Core Availability</strong>: Requires GPU architectures from Volta (2017) or Turing (2018) onward.</p></li>
@@ -622,12 +622,12 @@ Shared Memory in GPU architectures is a high-speed, programmable memory space lo
 </section>
 <hr class="docutils" />
 <section id="warps">
-<h2><strong>7. Warps</strong><a class="headerlink" href="#warps" title="Link to this heading">#</a></h2>
+<h3><strong>7. Warps</strong><a class="headerlink" href="#warps" title="Link to this heading">#</a></h3>
 <p><strong>Definition</strong>:<br />
 A <strong>warp</strong> is the fundamental unit of execution in a GPU, consisting of a group of <strong>32 threads</strong> that operate in <strong>lockstep</strong> (SIMD: Single Instruction, Multiple Data). Warps are managed by the Streaming Multiprocessor (SM) and represent the smallest schedulable unit of work. All threads in a warp execute the same instruction simultaneously, leveraging parallelism at the instruction level.</p>
 <hr class="docutils" />
 <section id="id3">
-<h3><strong>Function</strong>:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h4><strong>Function</strong>:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p><strong>Scheduling and Execution</strong>:</p>
 <ul class="simple">
@@ -653,7 +653,7 @@ A <strong>warp</strong> is the fundamental unit of execution in a GPU, consistin
 </section>
 <hr class="docutils" />
 <section id="memory-hierarchy">
-<h2><strong>8. Memory Hierarchy</strong><a class="headerlink" href="#memory-hierarchy" title="Link to this heading">#</a></h2>
+<h3><strong>8. Memory Hierarchy</strong><a class="headerlink" href="#memory-hierarchy" title="Link to this heading">#</a></h3>
 <p>The GPU memory hierarchy is a tiered structure designed to balance speed, capacity, and programmability:</p>
 <ol class="arabic simple">
 <li><p><strong>Registers</strong> (Fastest):</p>
@@ -690,7 +690,7 @@ A <strong>warp</strong> is the fundamental unit of execution in a GPU, consistin
 </section>
 <hr class="docutils" />
 <section id="id4">
-<h2><strong>9. Latency Hiding</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h3><strong>9. Latency Hiding</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p><strong>Mechanism</strong>:</p>
 <ul class="simple">
 <li><p><strong>Warp-Level Multithreading</strong>: When a warp stalls (e.g., waiting for global memory), the SM immediately switches to another <strong>ready warp</strong> (one with all operands available).</p></li>
@@ -716,7 +716,7 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 </section>
 <hr class="docutils" />
 <section id="thread-block-execution">
-<h2><strong>10. Thread Block Execution</strong><a class="headerlink" href="#thread-block-execution" title="Link to this heading">#</a></h2>
+<h3><strong>10. Thread Block Execution</strong><a class="headerlink" href="#thread-block-execution" title="Link to this heading">#</a></h3>
 <p><strong>Assignment</strong>:</p>
 <ul class="simple">
 <li><p>Each thread block is statically assigned to an SM at launch and remains there until completion.</p></li>
@@ -741,7 +741,7 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 </section>
 <hr class="docutils" />
 <section id="id5">
-<h2><strong>Architectural Considerations</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h3><strong>Architectural Considerations</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Warp Efficiency</strong>: Minimize divergence and maximize instruction-level parallelism (ILP) to keep warps active.</p></li>
 <li><p><strong>Memory Hierarchy</strong>: Prioritize register/local memory for thread-private data, shared memory for collaboration, and optimize global memory access patterns.</p></li>
@@ -753,7 +753,7 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 </section>
 </section>
 <section id="comparison-of-all-the-gpu-architectures">
-<h1><strong>Comparison of All the GPU Architectures</strong><a class="headerlink" href="#comparison-of-all-the-gpu-architectures" title="Link to this heading">#</a></h1>
+<h2><strong>Comparison of All the GPU Architectures</strong><a class="headerlink" href="#comparison-of-all-the-gpu-architectures" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Architecture</p></th>
@@ -852,6 +852,7 @@ In matrix multiplication, while one warp loads the next tile from global memory,
 </table>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -909,50 +910,49 @@ In matrix multiplication, while one warp loads the next tile from global memory,
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Components of SM</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-sm">Components of SM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-schedulers"><strong>2. Warp Schedulers</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Technical Details</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latency-hiding"><strong>Latency Hiding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-schedulers"><strong>2. Warp Schedulers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Technical Details</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#latency-hiding"><strong>Latency Hiding</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registers"><strong>3. Registers</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Technical Details</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registers"><strong>3. Registers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Technical Details</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-memory"><strong>4. Shared Memory</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function"><strong>Function</strong>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacity-and-architecture-dependence"><strong>Capacity and Architecture Dependence</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-memory"><strong>4. Shared Memory</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#function"><strong>Function</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacity-and-architecture-dependence"><strong>Capacity and Architecture Dependence</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache-texture-units"><strong>5. L1 Cache/Texture Units</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache"><strong>L1 Cache</strong>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-units"><strong>Texture Units</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache-texture-units"><strong>5. L1 Cache/Texture Units</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache"><strong>L1 Cache</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-units"><strong>Texture Units</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-cores"><strong>6. Specialized Cores</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-cores-volta-architectures"><strong>Tensor Cores</strong> (Volta+ Architectures):</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact"><strong>Performance Impact</strong>:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-considerations"><strong>Architectural Considerations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-cores"><strong>6. Specialized Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-cores-volta-architectures"><strong>Tensor Cores</strong> (Volta+ Architectures):</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact"><strong>Performance Impact</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-considerations"><strong>Architectural Considerations</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warps"><strong>7. Warps</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Function</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warps"><strong>7. Warps</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Function</strong>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
