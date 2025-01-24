@@ -4,9 +4,11 @@
 format: jb-book
 root: intro
 parts:
-  - title: Installation and Setup
-    - file: Installation/Installation
+  - caption: Introduction
+    chapters:
+    - file: Installation and Setup/Installation
     - file: Installation and Setup/Getting Started
-  - title: Basics
+  - caption: Basics
+    chapters:
     - file: Basics/SM
 
