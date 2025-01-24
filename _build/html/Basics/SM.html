@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Components of SM &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Basics/SM';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Getting started" href="../Installation%20and%20Setup/Getting%20Started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    ThunderKittens
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Installation%20and%20Setup/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installation%20and%20Setup/Getting%20Started.html">Getting started</a></li>
+
+
+
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Components of SM</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBasics/SM.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Basics/SM.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Components of SM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-schedulers"><strong>2. Warp Schedulers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Technical Details</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latency-hiding"><strong>Latency Hiding</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registers"><strong>3. Registers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Technical Details</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-memory"><strong>4. Shared Memory</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function"><strong>Function</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacity-and-architecture-dependence"><strong>Capacity and Architecture Dependence</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache-texture-units"><strong>5. L1 Cache/Texture Units</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache"><strong>L1 Cache</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-units"><strong>Texture Units</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-cores"><strong>6. Specialized Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-cores-volta-architectures"><strong>Tensor Cores</strong> (Volta+ Architectures):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact"><strong>Performance Impact</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-considerations"><strong>Architectural Considerations</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warps"><strong>7. Warps</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Function</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-strategies"><strong>Optimization Strategies</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>In this lesson we will break down the key components of Nvidia Hopper GPU architecture, focusing on SMs (Streaming Multiprocessors), L2 cache sections, and memory controllers.</p>
+<p>Streaming Multiprocessors (SMs) in Nvidia Hopper:</p>
+<p>Streaming Multiprocessors (SMs) of NVIDIA GPUs are roughly analogous to the cores of CPUs. That is, SMs both execute computations and store state available for computation in registers, with associated caches. Compared to CPU cores, GPU SMs are simple, weak processors. Execution in SMs is pipelined within an instruction (as in almost all CPUs since the 1990s) but there is no speculative execution or instruction pointer prediction (unlike all contemporary high-performance computation CPUs).</p>
+<p>SMs are the building blocks that enable massive parallelism, allowing GPUs to handle thousands of threads simultaneously. Each SM operates independently, managing threads, memory, and computations within its domain.</p>
+<p>Now there are a lot of things going under the hood in SMs. To understand that we need to understand what is inside SM. So here is a basic overview of the components of SM -</p>
+<section id="components-of-sm">
+<h1>Components of SM<a class="headerlink" href="#components-of-sm" title="Link to this heading">#</a></h1>
+<section id="cuda-cores">
+<h2><strong>1. CUDA Cores</strong><a class="headerlink" href="#cuda-cores" title="Link to this heading">#</a></h2>
+<section id="technical-details">
+<h3><strong>Technical Details</strong><a class="headerlink" href="#technical-details" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Architecture</strong>: CUDA cores are simplified arithmetic logic units (ALUs) optimized for parallel floating-point and integer operations. Unlike CPU cores, which handle complex instruction pipelines and branch prediction, CUDA cores focus on throughput over latency.</p></li>
+<li><p><strong>Precision Modes</strong>:</p>
+<ul>
+<li><p><strong>FP32</strong>: Primary focus for graphics and general-purpose compute (e.g., matrix operations in AI).</p></li>
+<li><p><strong>FP64</strong>: Double-precision cores for scientific simulations (fewer in consumer GPUs, more in data-center GPUs like A100).</p></li>
+<li><p><strong>INT32/INT4</strong>: Specialized cores for integer operations (e.g., AI quantization, ray traversal).</p></li>
+</ul>
+</li>
+<li><p><strong>SM Organization</strong>:</p>
+<ul>
+<li><p>In <strong>Ampere</strong> (e.g., GA102 in RTX 3090), each SM contains <strong>128 FP32 CUDA cores</strong> and <strong>64 INT32 cores</strong>, allowing concurrent FP32+INT32 execution.</p></li>
+<li><p><strong>Hopper</strong> (H100) introduces <strong>FP8 Tensor Cores</strong>, emphasizing AI workloads.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="practical-implications">
+<h3><strong>Practical Implications</strong><a class="headerlink" href="#practical-implications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Throughput vs. Latency</strong>: GPUs prioritize executing many threads in parallel rather than speeding up single threads.</p></li>
+<li><p><strong>Data Type Selection</strong>: Using lower precision (FP16/INT8) can double throughput on architectures with dedicated cores (e.g., Tensor Cores).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="warp-schedulers">
+<h2><strong>2. Warp Schedulers</strong><a class="headerlink" href="#warp-schedulers" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><strong>Technical Details</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Warp Mechanics</strong>:</p>
+<ul>
+<li><p>A warp (32 threads) is the smallest executable unit. Threads in a warp follow the same instruction path (SIMT).</p></li>
+<li><p><strong>Warp Divergence</strong>: If threads branch (e.g., <code class="docutils literal notranslate"><span class="pre">if/else</span></code>), both paths execute sequentially, halving efficiency. Use <code class="docutils literal notranslate"><span class="pre">__syncwarp()</span></code> or restructuring (e.g., pre-sorting data) to mitigate.</p></li>
+</ul>
+</li>
+<li><p><strong>Scheduler Types</strong>:</p>
+<ul>
+<li><p><strong>GigaThread Engine</strong>: Global scheduler distributing blocks to SMs.</p></li>
+<li><p><strong>Per-SM Schedulers</strong>:</p>
+<ul>
+<li><p><strong>Volta+</strong>: 4 warp schedulers/SM, enabling 2 instructions per clock (via <strong>independent thread scheduling</strong>).</p></li>
+<li><p><strong>Ampere</strong>: Enhanced to handle concurrent FP32 and INT32 operations.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="latency-hiding">
+<h3><strong>Latency Hiding</strong><a class="headerlink" href="#latency-hiding" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Memory Latency</strong>: When a warp stalls (e.g., global memory access), schedulers switch to ready warps. High <strong>occupancy</strong> (active warps/SM) ensures better latency hiding.</p></li>
+<li><p><strong>Occupancy Calculator</strong>: NVIDIA provides tools to estimate occupancy based on thread block size and resource usage (registers/shared memory).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="registers">
+<h2><strong>3. Registers</strong><a class="headerlink" href="#registers" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3><strong>Technical Details</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Per-Thread Storage</strong>: Each thread has a private register set (e.g., 255 registers/thread on Ampere).</p></li>
+<li><p><strong>Register Spilling</strong>: If registers exceed hardware limits, data spills to slower memory (local/global), crippling performance. Use <code class="docutils literal notranslate"><span class="pre">--ptxas-options=-v</span></code> to check spills.</p></li>
+<li><p><strong>Occupancy Trade-off</strong>:</p>
+<ul>
+<li><p><strong>Example</strong>: An SM with 65,536 registers can host:</p>
+<ul>
+<li><p>2048 threads if each uses 32 registers (2048 × 32 = 65,536).</p></li>
+<li><p>1024 threads if each uses 64 registers (1024 × 64 = 65,536).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="shared-memory">
+<h2><strong>4. Shared Memory</strong><a class="headerlink" href="#shared-memory" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>:<br />
+Shared Memory in GPU architectures is a high-speed, programmable memory space located on the Streaming Multiprocessor (SM) itself. It is explicitly managed by the programmer and shared among all threads within a single thread block. Unlike global memory (off-chip DRAM), shared memory provides <strong>nanosecond-level latency</strong> (similar to L1 cache) due to its on-chip location, making it orders of magnitude faster than global memory. Its primary purpose is to enable efficient data sharing and collaboration between threads in a block, reducing redundant global memory accesses.</p>
+<section id="function">
+<h3><strong>Function</strong>:<a class="headerlink" href="#function" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Data Reuse and Collaboration</strong>:</p>
+<ul class="simple">
+<li><p><strong>Stencil Operations</strong>: In algorithms like image convolution or PDE solvers, threads often require neighboring data (e.g., a 3x3 pixel grid). Shared memory allows threads to load a block of data once, reuse it across multiple threads, and avoid repeated global memory fetches.</p></li>
+<li><p><strong>Reductions</strong>: Operations like sum, max, or min across a thread block benefit from shared memory. Threads compute partial results, store them in shared memory, and iteratively combine results in parallel (e.g., using a tree-based reduction).</p></li>
+<li><p><strong>Matrix Multiplication</strong>: When multiplying matrices, threads load sub-matrices (tiles) into shared memory to exploit spatial locality and minimize global memory bandwidth usage.</p></li>
+</ul>
+</li>
+<li><p><strong>Explicit Management</strong>:</p>
+<ul class="simple">
+<li><p>Programmers must declare the size of shared memory statically (e.g., <code class="docutils literal notranslate"><span class="pre">__shared__</span> <span class="pre">float</span> <span class="pre">tile[32][32];</span></code>) or dynamically (via kernel configuration).</p></li>
+<li><p><strong>Synchronization</strong>: Threads within a block must synchronize using <code class="docutils literal notranslate"><span class="pre">__syncthreads()</span></code> to ensure all data is written to shared memory before others read it.</p></li>
+<li><p><strong>Bank Conflict Avoidance</strong>: Shared memory is divided into 32 banks (on most GPUs). Concurrent accesses to the same bank cause serialization. Programmers use techniques like memory padding or strided access patterns to mitigate conflicts.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="capacity-and-architecture-dependence">
+<h3><strong>Capacity and Architecture Dependence</strong>:<a class="headerlink" href="#capacity-and-architecture-dependence" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Size</strong>: Typically 64–128 KB per SM, but this varies by architecture (e.g., NVIDIA Ampere GPUs allocate up to 164 KB).</p></li>
+<li><p><strong>Configurability</strong>: On architectures like Fermi or Kepler, shared memory and L1 cache partition a 64 KB memory pool. Programmers can prioritize shared memory (e.g., 48 KB shared + 16 KB L1) using <code class="docutils literal notranslate"><span class="pre">cudaFuncSetCacheConfig()</span></code>.</p></li>
+<li><p><strong>Limitations</strong>: Overuse can lead to resource contention, limiting the number of active thread blocks per SM.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="l1-cache-texture-units">
+<h2><strong>5. L1 Cache/Texture Units</strong><a class="headerlink" href="#l1-cache-texture-units" title="Link to this heading">#</a></h2>
+<section id="l1-cache">
+<h3><strong>L1 Cache</strong>:<a class="headerlink" href="#l1-cache" title="Link to this heading">#</a></h3>
+<p><strong>Function</strong>:</p>
+<ul class="simple">
+<li><p>The L1 cache is a hardware-managed memory that automatically caches frequently accessed data from global or local memory. It reduces latency by storing recently used data closer to the SM.</p></li>
+<li><p><strong>Spatial and Temporal Locality</strong>: Optimized for access patterns where data is reused (e.g., looping over an array multiple times).</p></li>
+</ul>
+<p><strong>Shared Use with Shared Memory</strong>:</p>
+<ul class="simple">
+<li><p>In older architectures (e.g., Fermi), L1 and shared memory are partitioned from a unified 64 KB memory pool. Newer architectures (Volta+) decouple them, allowing simultaneous allocation.</p></li>
+<li><p><strong>Trade-offs</strong>: Increasing shared memory size reduces L1 cache, which may impact caching efficiency for irregular memory access patterns.</p></li>
+</ul>
+</section>
+<section id="texture-units">
+<h3><strong>Texture Units</strong>:<a class="headerlink" href="#texture-units" title="Link to this heading">#</a></h3>
+<p><strong>Function</strong>:</p>
+<ul class="simple">
+<li><p><strong>Hardware-Accelerated Filtering</strong>: Texture units are specialized for graphics tasks like bilinear/trilinear filtering, which interpolate texel values (e.g., smoothing pixels in zoomed images).</p></li>
+<li><p><strong>Cache Optimization</strong>: Texture memory uses a dedicated cache optimized for 2D/3D spatial locality, making it ideal for image processing (e.g., volume rendering, computer vision).</p></li>
+<li><p><strong>Non-Graphics Use Cases</strong>:</p>
+<ul>
+<li><p>Read-only data with spatial access patterns (e.g., medical imaging).</p></li>
+<li><p>Boundary handling via automatic clamping/wrapping of out-of-bounds coordinates.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Programming Interface</strong>:</p>
+<ul class="simple">
+<li><p>Accessed via CUDA’s texture API (e.g., <code class="docutils literal notranslate"><span class="pre">texture&lt;float,</span> <span class="pre">2&gt;</span> <span class="pre">texRef;</span></code>).</p></li>
+<li><p>Supports normalized coordinates and multiple data formats (e.g., <code class="docutils literal notranslate"><span class="pre">cudaFilterModeLinear</span></code> for interpolation).</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="specialized-cores">
+<h2><strong>6. Specialized Cores</strong><a class="headerlink" href="#specialized-cores" title="Link to this heading">#</a></h2>
+<section id="tensor-cores-volta-architectures">
+<h3><strong>Tensor Cores</strong> (Volta+ Architectures):<a class="headerlink" href="#tensor-cores-volta-architectures" title="Link to this heading">#</a></h3>
+<p><strong>Function</strong>:</p>
+<ul class="simple">
+<li><p><strong>Mixed-Precision Matrix Operations</strong>: Accelerate matrix multiply-accumulate (MMA) operations, such as ( D = A \times B + C ), where ( A, B, C, D ) can be FP16, BF16, INT8, or FP64 matrices.</p></li>
+<li><p><strong>Throughput</strong>: A single Tensor Core can compute a 4x4x4 matrix multiplication per clock cycle, delivering up to 125 TFLOPS (FP16) on NVIDIA A100 GPUs.</p></li>
+</ul>
+<p><strong>Use Cases</strong>:</p>
+<ul class="simple">
+<li><p><strong>Deep Learning</strong>: Training/inference with frameworks like TensorFlow/PyTorch, where large matrix multiplications dominate (e.g., fully connected layers in neural networks).</p></li>
+<li><p><strong>High-Performance Computing (HPC)</strong>: Solving linear algebra problems (e.g., LU decomposition).</p></li>
+</ul>
+<p><strong>Programming</strong>:</p>
+<ul class="simple">
+<li><p>Accessed via CUDA’s WMMA (Warp Matrix Multiply-Accumulate) API or libraries like cuBLAS/cuDNN.</p></li>
+<li><p>Requires data to be formatted in specific layouts (e.g., 16x16 FP16 tiles for MMA operations).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="performance-impact">
+<h3><strong>Performance Impact</strong>:<a class="headerlink" href="#performance-impact" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Tensor Cores</strong>: Reduce training times for AI models from weeks to days. For example, ResNet-50 training can be accelerated by 6x using Tensor Cores.</p></li>
+<li><p><strong>RT Cores</strong>: Enable real-time ray tracing at 60+ FPS in games like <em>Cyberpunk 2077</em>, which would otherwise require orders of magnitude more computation on CUDA cores.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="architectural-considerations">
+<h3><strong>Architectural Considerations</strong><a class="headerlink" href="#architectural-considerations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Shared Memory vs L1 Cache</strong>: Choose shared memory for predictable, collaborative data reuse; rely on L1 for irregular access with locality.</p></li>
+<li><p><strong>Tensor/RT Core Availability</strong>: Requires GPU architectures from Volta (2017) or Turing (2018) onward.</p></li>
+<li><p><strong>Trade-offs</strong>: Specialized cores increase silicon area but provide unmatched efficiency for targeted workloads.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="warps">
+<h2><strong>7. Warps</strong><a class="headerlink" href="#warps" title="Link to this heading">#</a></h2>
+<p><strong>Definition</strong>:<br />
+A <strong>warp</strong> is the fundamental unit of execution in a GPU, consisting of a group of <strong>32 threads</strong> that operate in <strong>lockstep</strong> (SIMD: Single Instruction, Multiple Data). Warps are managed by the Streaming Multiprocessor (SM) and represent the smallest schedulable unit of work. All threads in a warp execute the same instruction simultaneously, leveraging parallelism at the instruction level.</p>
+<hr class="docutils" />
+<section id="id3">
+<h3><strong>Function</strong>:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Scheduling and Execution</strong>:</p>
+<ul class="simple">
+<li><p>The SM schedules warps, not individual threads. At every clock cycle, the <strong>warp scheduler</strong> selects a warp that is ready to execute (e.g., not stalled waiting for data).</p></li>
+<li><p><strong>Lockstep Execution</strong>: All 32 threads in a warp execute the same instruction on different data. For example, in a vector addition kernel, a warp might compute 32 elements of the vector concurrently.</p></li>
+<li><p><strong>Efficiency</strong>: Warps enable massive parallelism by allowing the SM to hide latency through rapid context switching between warps (see <a class="reference internal" href="#9-latency-hiding"><span class="xref myst">Latency Hiding</span></a>).</p></li>
+</ul>
+</li>
+<li><p><strong>Divergence Handling</strong>:</p>
+<ul class="simple">
+<li><p><strong>Branch Divergence</strong>: If threads within a warp follow different execution paths (e.g., <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statements), the warp <strong>serializes</strong> execution. For example, threads taking the <code class="docutils literal notranslate"><span class="pre">if</span></code> branch execute first, while others idle, followed by those taking the <code class="docutils literal notranslate"><span class="pre">else</span></code> branch.</p></li>
+<li><p><strong>Performance Penalty</strong>: Divergence can drastically reduce throughput. A warp with divergent branches may require 2–32x more cycles to complete.</p></li>
+<li><p><strong>Mitigation Strategies</strong>:</p>
+<ul>
+<li><p>Avoid branch conditions that vary within a warp (e.g., use warp-wide conditions).</p></li>
+<li><p>Restructure code to group threads with similar execution paths (e.g., using <code class="docutils literal notranslate"><span class="pre">__ballot_sync()</span></code> to coordinate branches).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="memory-hierarchy">
+<h2><strong>8. Memory Hierarchy</strong><a class="headerlink" href="#memory-hierarchy" title="Link to this heading">#</a></h2>
+<p>The GPU memory hierarchy is a tiered structure designed to balance speed, capacity, and programmability:</p>
+<ol class="arabic simple">
+<li><p><strong>Registers</strong> (Fastest):</p>
+<ul class="simple">
+<li><p><strong>Per-Thread Storage</strong>: Each thread has dedicated registers (e.g., 255 registers/thread on NVIDIA Ampere).</p></li>
+<li><p><strong>Zero Latency</strong>: Register access is the fastest, as values are stored directly in the SM’s register file.</p></li>
+<li><p><strong>Limitations</strong>: Excessive register usage reduces the number of concurrent threads (occupancy).</p></li>
+</ul>
+</li>
+<li><p><strong>Shared Memory</strong>:</p>
+<ul class="simple">
+<li><p><strong>Block-Level Shared Storage</strong>: On-chip memory accessible to all threads in a thread block (see <a class="reference internal" href="#4-shared-memory"><span class="xref myst">Shared Memory</span></a>).</p></li>
+<li><p><strong>Use Cases</strong>: Storing reusable data (e.g., matrix tiles in GEMM kernels) or partial results (e.g., reductions).</p></li>
+</ul>
+</li>
+<li><p><strong>L1/Texture Cache</strong>:</p>
+<ul class="simple">
+<li><p><strong>L1 Cache</strong>: Caches global/local memory accesses with spatial/temporal locality. Automatically managed by hardware.</p></li>
+<li><p><strong>Texture Cache</strong>: Optimized for 2D/3D spatial locality, supporting hardware-accelerated filtering (e.g., bilinear interpolation).</p></li>
+</ul>
+</li>
+<li><p><strong>Global Memory</strong> (Slowest):</p>
+<ul class="simple">
+<li><p><strong>GPU DRAM</strong>: High-capacity memory (e.g., 24 GB on NVIDIA RTX 4090) but high latency (~400 cycles).</p></li>
+<li><p><strong>Optimization</strong>:</p>
+<ul>
+<li><p><strong>Coalesced Access</strong>: Combine memory requests from adjacent threads into a single transaction (e.g., access contiguous 128-byte aligned blocks).</p></li>
+<li><p><strong>Memory Compression</strong>: Newer architectures (e.g., Ampere) use delta color compression to reduce bandwidth usage.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2><strong>9. Latency Hiding</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><strong>Mechanism</strong>:</p>
+<ul class="simple">
+<li><p><strong>Warp-Level Multithreading</strong>: When a warp stalls (e.g., waiting for global memory), the SM immediately switches to another <strong>ready warp</strong> (one with all operands available).</p></li>
+<li><p><strong>Occupancy</strong>: The ratio of active warps to the maximum supported by the SM (e.g., 64 warps/SM on Ampere). Higher occupancy improves latency hiding.</p></li>
+</ul>
+<p><strong>Key Concepts</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Memory-Computation Overlap</strong>:</p>
+<ul class="simple">
+<li><p>While Warp A waits for data, Warp B executes arithmetic operations.</p></li>
+<li><p>Requires sufficient independent work (warps) to keep the SM busy.</p></li>
+</ul>
+</li>
+<li><p><strong>Limitations</strong>:</p>
+<ul class="simple">
+<li><p><strong>Resource Constraints</strong>: Limited registers/shared memory per SM restrict the number of active warps.</p></li>
+<li><p><strong>Kernel Design</strong>: Poorly structured kernels (e.g., excessive synchronization) reduce warp schedulability.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Example</strong>:<br />
+In matrix multiplication, while one warp loads the next tile from global memory, another warp computes the dot product for the current tile.</p>
+</section>
+<hr class="docutils" />
+<section id="thread-block-execution">
+<h2><strong>10. Thread Block Execution</strong><a class="headerlink" href="#thread-block-execution" title="Link to this heading">#</a></h2>
+<p><strong>Assignment</strong>:</p>
+<ul class="simple">
+<li><p>Each thread block is statically assigned to an SM at launch and remains there until completion.</p></li>
+<li><p><strong>SM Resources</strong>: The number of blocks per SM depends on:</p>
+<ul>
+<li><p><strong>Register Usage</strong>: Each thread consumes registers (e.g., 64 threads/block × 32 registers/thread = 2,048 registers/block).</p></li>
+<li><p><strong>Shared Memory</strong>: Blocks declare fixed shared memory (e.g., 48 KB/block).</p></li>
+<li><p><strong>Thread Slots</strong>: SMs have a maximum thread capacity (e.g., 2,048 threads/SM on Ampere).</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Resource Limits</strong>:</p>
+<ul class="simple">
+<li><p><strong>Partitioning</strong>: If a block requires 64 KB of shared memory and the SM has 128 KB, only two blocks can reside on the SM.</p></li>
+<li><p><strong>Occupancy Calculator</strong>: Tools like NVIDIA’s <code class="docutils literal notranslate"><span class="pre">CUDA_Occupancy_Calculator.xls</span></code> help optimize block size for maximum occupancy.</p></li>
+</ul>
+<p><strong>Optimization Strategies</strong>:</p>
+<ul class="simple">
+<li><p><strong>Block Size</strong>: Use multiples of warp size (32 threads) to avoid underutilized warps.</p></li>
+<li><p><strong>Dynamic Partitioning</strong>: Adjust shared memory/register usage to fit more blocks/SM.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h2><strong>Architectural Considerations</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Warp Efficiency</strong>: Minimize divergence and maximize instruction-level parallelism (ILP) to keep warps active.</p></li>
+<li><p><strong>Memory Hierarchy</strong>: Prioritize register/local memory for thread-private data, shared memory for collaboration, and optimize global memory access patterns.</p></li>
+<li><p><strong>Latency Hiding</strong>: Design kernels to maximize independent work (warps) and balance compute/memory operations.</p></li>
+<li><p><strong>Block Configuration</strong>: Tailor block size to SM resource limits for optimal occupancy.</p></li>
+</ul>
+<section id="optimization-strategies">
+<h3><strong>Optimization Strategies</strong><a class="headerlink" href="#optimization-strategies" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Compiler Directives</strong>: Use <code class="docutils literal notranslate"><span class="pre">__launch_bounds__(MAX_THREADS_PER_BLOCK,</span> <span class="pre">MIN_BLOCKS_PER_SM)</span></code> to hint register limits.</p></li>
+<li><p><strong>Shared Memory</strong>: Offload reusable data to shared memory (1-2 cycles latency vs. hundreds for global memory).</p></li>
+</ul>
+<hr class="docutils" />
+<p>Now different Architectures have different specs. So to cut the hassle here’s a basic overview -</p>
+</section>
+</section>
+<section id="comparison-of-all-the-gpu-architectures">
+<h2><strong>Comparison of All the GPU Architectures</strong><a class="headerlink" href="#comparison-of-all-the-gpu-architectures" title="Link to this heading">#</a></h2>
+<p>Here’s the corrected table with improved formatting and alignment while keeping the content unchanged:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Architecture</p></th>
+<th class="head"><p>CUDA Cores/SM</p></th>
+<th class="head"><p>Warp Schedulers/SM</p></th>
+<th class="head"><p>Tensor Cores</p></th>
+<th class="head"><p>RT Cores</p></th>
+<th class="head"><p>Memory Tech</p></th>
+<th class="head"><p>Key Features</p></th>
+<th class="head"><p>Process Node</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Fermi</strong></p></td>
+<td><p>32 FP32</p></td>
+<td><p>2</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>GDDR5</p></td>
+<td><p>First ECC memory, shared memory/L1 cache</p></td>
+<td><p>40/28nm</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Kepler</strong></p></td>
+<td><p>192 FP32</p></td>
+<td><p>4</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>GDDR5</p></td>
+<td><p>Dynamic Parallelism, Hyper-Q, 64 DP units</p></td>
+<td><p>28nm</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Maxwell</strong></p></td>
+<td><p>128 FP32</p></td>
+<td><p>4</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>GDDR5</p></td>
+<td><p>Unified shared memory/L1 cache, 2x perf/W</p></td>
+<td><p>28nm</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pascal</strong></p></td>
+<td><p>64 FP32</p></td>
+<td><p>2</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>HBM2/GDDR5X</p></td>
+<td><p>Unified memory, NVLink 1.0, 16nm FinFET</p></td>
+<td><p>16nm</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Volta</strong></p></td>
+<td><p>64 FP32 + 64 INT32</p></td>
+<td><p>4</p></td>
+<td><p>1st-gen</p></td>
+<td><p>N/A</p></td>
+<td><p>HBM2</p></td>
+<td><p>Independent Thread Scheduling, Tensor Cores</p></td>
+<td><p>12nm</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Turing</strong></p></td>
+<td><p>64 FP32 + 64 INT32</p></td>
+<td><p>4</p></td>
+<td><p>2nd-gen</p></td>
+<td><p>1st-gen</p></td>
+<td><p>GDDR6</p></td>
+<td><p>RT Cores, concurrent FP/INT, INT8/INT4 Tensor Cores</p></td>
+<td><p>12nm</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ampere</strong></p></td>
+<td><p>64 FP32 + 64 INT32</p></td>
+<td><p>4</p></td>
+<td><p>3rd-gen</p></td>
+<td><p>2nd-gen</p></td>
+<td><p>GDDR6X/HBM2</p></td>
+<td><p>Structural sparsity, 2x AI throughput, PCIe Gen4</p></td>
+<td><p>7nm</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hopper</strong></p></td>
+<td><p>128 FP32 + 64 INT32</p></td>
+<td><p>4</p></td>
+<td><p>4th-gen</p></td>
+<td><p>N/A</p></td>
+<td><p>HBM3</p></td>
+<td><p>FP8 Tensor Cores, Thread Block Clusters, NVLink 4.0</p></td>
+<td><p>TSMC 4N</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Blackwell</strong></p></td>
+<td><p>128 unified FP32/INT32</p></td>
+<td><p>4</p></td>
+<td><p>5th-gen</p></td>
+<td><p>4th-gen</p></td>
+<td><p>GDDR7/HBM3e</p></td>
+<td><p>FP4 Tensor Cores, AI Management Processor, 10 TB/s interconnect</p></td>
+<td><p>TSMC 4NP</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Installation%20and%20Setup/Getting%20Started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting started</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-cores"><strong>1. CUDA Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-details"><strong>Technical Details</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-implications"><strong>Practical Implications</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warp-schedulers"><strong>2. Warp Schedulers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Technical Details</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latency-hiding"><strong>Latency Hiding</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registers"><strong>3. Registers</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Technical Details</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-memory"><strong>4. Shared Memory</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function"><strong>Function</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacity-and-architecture-dependence"><strong>Capacity and Architecture Dependence</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache-texture-units"><strong>5. L1 Cache/Texture Units</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-cache"><strong>L1 Cache</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texture-units"><strong>Texture Units</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialized-cores"><strong>6. Specialized Cores</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-cores-volta-architectures"><strong>Tensor Cores</strong> (Volta+ Architectures):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-impact"><strong>Performance Impact</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architectural-considerations"><strong>Architectural Considerations</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warps"><strong>7. Warps</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Function</strong>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-hierarchy"><strong>8. Memory Hierarchy</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>9. Latency Hiding</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thread-block-execution"><strong>10. Thread Block Execution</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>Architectural Considerations</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-strategies"><strong>Optimization Strategies</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-all-the-gpu-architectures"><strong>Comparison of All the GPU Architectures</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By HazyResearch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
