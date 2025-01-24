@@ -1,3 +1,5 @@
+# SM
+
 In this lesson we will break down the key components of Nvidia Hopper GPU architecture, focusing on SMs (Streaming Multiprocessors), L2 cache sections, and memory controllers.
 
 Streaming Multiprocessors (SMs) in Nvidia Hopper:
