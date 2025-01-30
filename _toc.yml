@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: Installation and Setup/Installation
     - file: Installation and Setup/Getting Started
+    - file: Installation and Setup/Demo
   - caption: Basics
     chapters:
     - file: Basics/SM
