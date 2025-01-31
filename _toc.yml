@@ -13,6 +13,7 @@ parts:
     chapters:
     - file: Basics/SM
     - file: Basics/tk-overview-basic
+    - file: Basics/Addition
     - file: Basics/trying-kernels-and-examples
   - caption: Advanced
     chapters:
