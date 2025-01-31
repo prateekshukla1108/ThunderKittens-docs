@@ -7,13 +7,13 @@ parts:
   - caption: Introduction
     chapters:
     - file: Installation and Setup/Installation
-    - file: Installation and Setup/Getting Started
+    - file: Installation and Setup/Getting-Started
     - file: Installation and Setup/Demo
   - caption: Basics
     chapters:
     - file: Basics/SM
-    - file: Basics/tk overview basic
-    - file: Basics/trying kernels and examples
+    - file: Basics/tk-overview-basic
+    - file: Basics/trying-kernels-and-examples
   - caption: Advanced
     chapters:
     - file: Advanced/Overview.md
