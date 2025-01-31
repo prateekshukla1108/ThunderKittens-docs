@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Installation &#8212; ThunderKittens Documentation</title>
+    <title>TK Demos: play with kittens! &#8212; ThunderKittens Documentation</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Installation and Setup/Installation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Installation and Setup/Demo';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting started" href="Getting%20Started.html" />
-    <link rel="prev" title="ThunderKittens" href="../intro.html" />
+    <link rel="next" title="SM" href="../Basics/SM.html" />
+    <link rel="prev" title="Getting started" href="Getting%20Started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,12 +170,12 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Getting%20Started.html">Getting started</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Demo.html">TK Demos: play with kittens!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TK Demos: play with kittens!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
 <ul class="nav bd-sidenav">
@@ -256,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FInstallation and Setup/Installation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FInstallation and Setup/Demo.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="../_sources/Installation and Setup/Installation.md" target="_blank"
+      <li><a href="../_sources/Installation and Setup/Demo.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +362,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Installation</h1>
+    <h1>TK Demos: play with kittens!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,8 +372,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-requirements">Library requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-pre-existing-kernels">Installing pre-existing kernels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-setup">General setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attention">Attention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lolcats">LoLCATS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#based">Based</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-demos">Your Demos!</a></li>
 </ul>
             </nav>
         </div>
@@ -385,49 +388,78 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<p>To use Thunderkittens, there’s not all that much you need to do with TK itself. It’s a header only library, so just clone the repo, and include kittens.cuh. Easy money.</p>
-<section id="library-requirements">
-<h2>Library requirements<a class="headerlink" href="#library-requirements" title="Link to this heading">#</a></h2>
-<p>But ThunderKittens does use a bunch of modern stuff, so it has fairly aggressive requirements.</p>
-<ul class="simple">
-<li><p>CUDA 12.3+. Anything after CUDA 12.1 will <em>probably</em> work, but you’ll likely end up with serialized wgmma pipelines on H100s due to a bug in those earlier versions of CUDA. We do our dev work on CUDA 12.6, because we want our kittens to play in the nicest, most modern environment possible.</p></li>
-<li><p>(Extensive) C++20 use – TK runs on concepts. If you get weird compilation errors, chances are your gcc is out of date.</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gcc-11<span class="w"> </span>g++-11
+  <section id="tk-demos-play-with-kittens">
+<h1>TK Demos: play with kittens!<a class="headerlink" href="#tk-demos-play-with-kittens" title="Link to this heading">#</a></h1>
+<div align="center" >
+    <img src="assets/kittens.png" height=350 alt="Kitten workers" style="margin-bottom:px"/> 
+</div>
+<br>
+<section id="general-setup">
+<h2>General setup<a class="headerlink" href="#general-setup" title="Link to this heading">#</a></h2>
+<p>Several of these demos are setup to use large 8b models from Hugging Face. To setup, run login:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>huggingface-cli<span class="w"> </span>login
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">alternatives</span> <span class="o">--</span><span class="n">install</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">gcc</span> <span class="n">gcc</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mi">11</span> <span class="mi">100</span> <span class="o">--</span><span class="n">slave</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">g</span><span class="o">++</span> <span class="n">g</span><span class="o">++</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">g</span><span class="o">++-</span><span class="mi">11</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">clang</span><span class="o">-</span><span class="mi">11</span>
-</pre></div>
-</div>
-<p>If you can’t find nvcc, or you experience issues where your environment is pointing to the wrong CUDA version:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda-12.6/
-<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">CUDA_HOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="w"> </span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">CUDA_HOME</span><span class="si">}</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
-</pre></div>
-</div>
-</section>
-<section id="installing-pre-existing-kernels">
-<h2>Installing pre-existing kernels<a class="headerlink" href="#installing-pre-existing-kernels" title="Link to this heading">#</a></h2>
-<p>We’ve provided a number of TK kernels in the <code class="docutils literal notranslate"><span class="pre">kernels/</span></code> folder! To use these with PyTorch bindings:</p>
+<p>Set the directory at which you want the models to download in the <code class="docutils literal notranslate"><span class="pre">_model_config.yaml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">demos/configs/</span></code> directory.</p>
+<p>Next, install the TK kernels:</p>
 <ol class="arabic simple">
-<li><p>Set environment variables.</p></li>
+<li><p>From the <code class="docutils literal notranslate"><span class="pre">ThunderKittens/</span></code> directory, run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">env.src</span></code> to set the environment variables.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">ThunderKittens/config.py</span></code> select <code class="docutils literal notranslate"><span class="pre">hedgehog</span></code> and <code class="docutils literal notranslate"><span class="pre">attn</span></code> and run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code> to install the TK kernels.</p></li>
 </ol>
-<p>To compile examples, run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">env.src</span></code> from the root directory before going into the examples directory. (Many of the examples use the <code class="docutils literal notranslate"><span class="pre">$THUNDERKITTENS_ROOT</span></code> environment variable to orient themselves and find the src directory.</p>
-<ol class="arabic simple" start="2">
-<li><p>Select the kernels you want to build in <code class="docutils literal notranslate"><span class="pre">configs.py</span></code> file</p></li>
-<li><p>Install:</p></li>
+</section>
+<section id="attention">
+<h2>Attention<a class="headerlink" href="#attention" title="Link to this heading">#</a></h2>
+<p>Attention powers a large number of current LLMs. TK includes forwards / prefill and backwards kernels. We include causal, non-causal, and GQA variants.</p>
+<p>We include:</p>
+<ol class="arabic simple">
+<li><p>Try training with kittens! Checkout <a class="reference external" href="https://github.com/HazyResearch/train-tk">tk-training</a></p></li>
+<li><p>LLM inference integration:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>setup.py<span class="w"> </span>install
+<ul class="simple">
+<li><p>Run <a class="reference external" href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">Llama 3 8B</a> with TK GQA attention</p></li>
+<li><p>Run <a class="reference external" href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct">Qwen 2.5 7B</a> with TK attention</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>llama_demo/
+bash<span class="w"> </span>demo_8b.sh
 </pre></div>
 </div>
-<p>Finally, thanks to Jordan Juravsky for putting together a quick doc on setting up a <a class="reference external" href="https://github.com/HazyResearch/ThunderKittens/blob/main/docs/conda_setup.md">kittens-compatible conda</a>.</p>
+<p>And enter your prompt, e.g., “The capital of America is”</p>
+</section>
+<section id="lolcats">
+<h2>LoLCATS<a class="headerlink" href="#lolcats" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/HazyResearch/lolcats">LoLCATS</a> is a recent state-of-the-art method for converting quadratic attention Transformer LLMs to linear attention LLMs. TK includes a forwards / prefill kernel.</p>
+<p>We include:</p>
+<ol class="arabic simple">
+<li><p>LLM inference integration:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Run <a class="reference external" href="https://huggingface.co/collections/hazyresearch/lolcats-670ca4341699355b61238c37">LoLCATS-Llama 3.1 8B</a> with TK</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>lolcats_demo/
+bash<span class="w"> </span>demo_8b.sh
+</pre></div>
+</div>
+<p>And enter your prompt, e.g., “The capital of America is”</p>
+</section>
+<section id="based">
+<h2>Based<a class="headerlink" href="#based" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/HazyResearch/based/tree/main">Based</a> is a linear attention architecture that combines short sliding window attentions with large-state-size linear attentions. TK includes a forwards / prefill kernel.</p>
+<p>Added installs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/sustcsonglin/flash-linear-attention
+</pre></div>
+</div>
+<p>We include:
+LLM inference integration:</p>
+<ul class="simple">
+<li><p>Run <a class="reference external" href="https://huggingface.co/hazyresearch/my-awesome-model">Based 1.3B</a> with TK on a series of recall-intensive in-context learning tasks</p></li>
+</ul>
+</section>
+<section id="your-demos">
+<h2>Your Demos!<a class="headerlink" href="#your-demos" title="Link to this heading">#</a></h2>
+<p>If you use TK to build any demos, please reach out / make a PR! We’d love to feature it here!!</p>
+<ul class="simple">
+<li><p>DeltaNet: <a class="github reference external" href="https://github.com/proger/accelerated-scan/tree/delta">proger/accelerated-scan</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -462,20 +494,20 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="Getting%20Started.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ThunderKittens</p>
+        <p class="prev-next-title">Getting started</p>
       </div>
     </a>
     <a class="right-next"
-       href="Getting%20Started.html"
+       href="../Basics/SM.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting started</p>
+        <p class="prev-next-title">SM</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -496,8 +528,11 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-requirements">Library requirements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-pre-existing-kernels">Installing pre-existing kernels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-setup">General setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attention">Attention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lolcats">LoLCATS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#based">Based</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-demos">Your Demos!</a></li>
 </ul>
   </nav></div>
 
