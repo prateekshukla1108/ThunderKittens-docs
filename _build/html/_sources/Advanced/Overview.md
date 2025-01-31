@@ -45,7 +45,7 @@ FAQ:
 
 ## 
 
-## TK Kernel Examples \- Advanced {#tk-kernel-examples---advanced}
+## TK Kernel Examples 
 
 Walk through these three kernels to develop an “advanced” TK understanding (i.e., uses the template discussed in the prior section).
 
