@@ -1,21 +1,23 @@
-name: Deploy Jupyter Book
+name: Deploy Jupyter Book to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build the book
-        run: |
-          pip install jupyter-book
-          jupyter-book build .
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: "_build/html"
+          github_token: ${{ secrets.GIT_TOKEN }}
+          publish_dir: ./_build/html
 
