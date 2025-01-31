@@ -1,5 +1,5 @@
 
-## **Trying out your kernel** 
+## Trying out your kernel 
 
 We can run a kernel from c++ or from Python. 
 
