@@ -11,7 +11,6 @@ parts:
     - file: Installation and Setup/Demo
   - caption: Basics
     chapters:
-    - file: Basics/SM
     - file: Basics/tk-overview-basic
     - file: Basics/Addition
     - file: Basics/trying-kernels-and-examples
